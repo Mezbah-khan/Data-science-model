@@ -79,7 +79,8 @@ from sklearn.preprocessing import OrdinalEncoder
 encoder_01 = OneHotEncoder(sparse_output=False)
 save_file_01 = encoder_01.fit_transform(datas[['sex']]) 
 output_01 = pd . DataFrame(save_file_01 , columns=encoder_01.get_feature_names_out(['sex']))
-print(output_01)
+print(output_1)  
+
 
 
      # lets try the label encdoing for (specoies, island)  
@@ -104,7 +105,7 @@ columns_to_normalize = ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 
 min_max_scaler = MinMaxScaler()
 scaled_data = min_max_scaler.fit_transform(datas[columns_to_normalize])
 scaled_df = pd.DataFrame(scaled_data, columns=columns_to_normalize)
-print(scaled_df)
+print(scaled_df)   
 
 final_df = pd. concat([encoder_df, scaled_df], axis=1) 
 model_data= final_df.to_excel('database2.xlsx')
